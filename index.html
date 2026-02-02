@@ -74,51 +74,6 @@
         </div>
     </section>
 
-    <!-- 使い方いろいろ -->
-    <section class="usecases">
-        <h2 class="section-title">例えばこんな使い方<br>どうですか？</h2>
-
-        <div class="usecase-group">
-            <h3 class="group-title">👔 社員向け</h3>
-            <div class="usecase-card">
-                <img src="images/ai-ceo.png" alt="AI社長" class="usecase-image">
-                <div class="usecase-info">
-                    <span class="usecase-number">01</span>
-                    <h3>AI社長</h3>
-                    <p>社長の考えや理念をAIに学習させ、全社員にいつでも浸透。質問にも24時間回答。</p>
-                </div>
-            </div>
-            <div class="usecase-card">
-                <img src="images/document-rag.png" alt="社内文書RAG" class="usecase-image">
-                <div class="usecase-info">
-                    <span class="usecase-number">02</span>
-                    <h3>社内文書AI</h3>
-                    <p>就業規則、営業マニュアルなどを読み込ませ、「これってどこに書いてある？」に即答。</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="usecase-group">
-            <h3 class="group-title">🛒 お客様向け</h3>
-            <div class="usecase-card">
-                <img src="images/customer-support.png" alt="カスタマー対応" class="usecase-image">
-                <div class="usecase-info">
-                    <span class="usecase-number">03</span>
-                    <h3>カスタマーAI</h3>
-                    <p>お客様からの問い合わせに一次対応。よくある質問は自動回答、難しい質問は担当者へ。</p>
-                </div>
-            </div>
-            <div class="usecase-card">
-                <img src="images/reservation.png" alt="予約・窓口対応" class="usecase-image">
-                <div class="usecase-info">
-                    <span class="usecase-number">04</span>
-                    <h3>予約・窓口AI</h3>
-                    <p>予約受付や商品説明をAIが対応。営業時間外でも受付可能に。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="survey">
         <h2 class="section-title">📝 お問い合わせ</h2>
         <p class="survey-lead">
@@ -137,9 +92,47 @@
                 <input type="tel" id="tel" class="form-input" placeholder="電話番号">
             </div>
 
+            <!-- 興味のある使い方 -->
+            <div class="form-group checkbox-group">
+                <label class="form-label">興味のある内容（複数回答可）</label>
+                <label class="checkbox-item">
+                    <input type="checkbox" name="interest" value="AI社長">
+                    <span>AI社長 (理念浸透)</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" name="interest" value="社内文書AI">
+                    <span>社内文書AI (マニュアル検索)</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" name="interest" value="カスタマーAI">
+                    <span>カスタマーAI (自動応答)</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" name="interest" value="予約・窓口AI">
+                    <span>予約・窓口AI (24時間受付)</span>
+                </label>
+            </div>
 
-
-            <!-- 自由記述 -->
+            <!-- 予算感 -->
+            <div class="form-group radio-group">
+                <label class="form-label">導入予算のイメージ</label>
+                <label class="radio-item">
+                    <input type="radio" name="budget" value="30-50万">
+                    <span>30万〜50万</span>
+                </label>
+                <label class="radio-item">
+                    <input type="radio" name="budget" value="50-100万">
+                    <span>50万〜100万</span>
+                </label>
+                <label class="radio-item">
+                    <input type="radio" name="budget" value="100-300万">
+                    <span>100万〜300万</span>
+                </label>
+                <label class="radio-item">
+                    <input type="radio" name="budget" value="300万以上">
+                    <span>300万以上</span>
+                </label>
+            </div>
             <div class="form-group">
                 <label class="form-label">お問い合わせ内容</label>
                 <textarea id="message" class="form-textarea" placeholder="ご質問やご要望をご記入ください"></textarea>
@@ -187,6 +180,14 @@
                 <div class="confirm-row">
                     <span class="confirm-label">電話番号</span>
                     <span class="confirm-value" id="conf-tel"></span>
+                </div>
+                <div class="confirm-row">
+                    <span class="confirm-label">興味のある内容</span>
+                    <span class="confirm-value" id="conf-interest"></span>
+                </div>
+                <div class="confirm-row">
+                    <span class="confirm-label">導入予算</span>
+                    <span class="confirm-value" id="conf-budget"></span>
                 </div>
                 <div class="confirm-row">
                     <span class="confirm-label">お問い合わせ</span>

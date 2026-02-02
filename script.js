@@ -1,6 +1,7 @@
 let formDataTemp = {}; // 送信データを一時保存
 
 // ===== 確認モーダル表示処理 =====
+// ===== 確認モーダル表示処理 =====
 function confirmAndSend() {
     // 1. 入力値の取得
     const company = document.getElementById('company').value || '';
@@ -9,7 +10,16 @@ function confirmAndSend() {
     const tel = document.getElementById('tel').value || '';
     const message = document.getElementById('message').value || '';
 
-    // 必須チェック（HTMLのrequired属性でカバーされるが念のため）
+    // チェックボックス (Interest)
+    const interests = Array.from(document.querySelectorAll('input[name="interest"]:checked'))
+                           .map(cb => cb.value)
+                           .join(', ');
+
+    // ラジオボタン (Budget)
+    const budgetEl = document.querySelector('input[name="budget"]:checked');
+    const budget = budgetEl ? budgetEl.value : '';
+
+    // 必須チェック
     if (!company || !name || !email) {
         alert('必須項目（会社名、お名前、メール）を入力してください。');
         return;
@@ -21,6 +31,8 @@ function confirmAndSend() {
         name: name,
         email: email,
         tel: tel,
+        interest: interests,
+        budget: budget,
         message: message
     };
 
@@ -29,6 +41,14 @@ function confirmAndSend() {
     document.getElementById('conf-name').textContent = name;
     document.getElementById('conf-email').textContent = email;
     document.getElementById('conf-tel').textContent = tel;
+
+    // アンケート項目のセット（要素があれば）
+    const confInterest = document.getElementById('conf-interest');
+    if (confInterest) confInterest.textContent = interests || '（未選択）';
+
+    const confBudget = document.getElementById('conf-budget');
+    if (confBudget) confBudget.textContent = budget || '（未選択）';
+
     document.getElementById('conf-message').textContent = message;
 
     // 4. 確認モーダル表示

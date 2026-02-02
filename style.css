@@ -528,22 +528,25 @@ body {
     }
 
     .about-card {
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-        padding: 2rem;
-        max-width: 700px;
+        /* 横並びをやめて縦積み中央揃えにする（ユーザー要望により） */
+        display: block;
+        text-align: center;
+        padding: 3rem;
+        max-width: 600px;
         margin: 0 auto;
     }
 
     .about-card .about-image {
         width: 100%;
-        max-width: 320px; /* PCでは画像を少し小さめに */
-        margin: 0 auto;
+        max-width: 380px; /* ここでサイズ制限 */
+        margin: 0 auto 2rem;
+        display: block;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
 
     .about-lead {
-        text-align: left;
+        text-align: center;
+        font-size: 1.4rem;
     }
 
     .usecase-tabs {
@@ -566,6 +569,8 @@ body {
         margin: 0 auto;
         padding: 2rem;
     }
+}
+
 /* ===== モーダルスタイル拡張 ===== */
 .confirm-content {
     max-width: 600px;
@@ -592,7 +597,7 @@ body {
 }
 
 .confirm-label {
-    width: 120px;
+    width: 140px; /* 少し広げる */
     font-weight: bold;
     color: #555;
     flex-shrink: 0;
@@ -602,6 +607,7 @@ body {
     flex-grow: 1;
     word-break: break-all;
 }
+
 
 .modal-buttons {
     display: flex;
