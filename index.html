@@ -46,7 +46,7 @@
 
         <!-- 配送例 -->
         <div class="about-card example-card css-example-card">
-            <img src="images/YAMATO1.jpg" alt="配送AIの例" class="about-image">
+            <img src="images/yamato1.jpg" alt="配送AIの例" class="about-image">
             <div class="about-text centered-text">
                 <p class="about-lead">
                     ヤマト運輸様でも<br>
@@ -62,7 +62,7 @@
                 <p class="about-lead">
                     <strong>離職防止</strong>のための<br>
                     メンターAI × LINE<br>
-                    <span class="small-note">（既存サービス ココ♡トモ）</span>
+                    <span class="small-note">（既存サービス <a href="https://kokotomo.becreative.co.jp/" target="_blank" rel="noopener">ココ♡トモ</a>）</span>
                 </p>
                 <ul class="feature-list">
                     <li>🤝 24時間対応のAIカウンセラー</li>
@@ -118,6 +118,108 @@
             </div>
         </div>
     </section>
+
+    <!-- アンケート -->
+    <section class="survey">
+        <h2 class="section-title">📝 ご意見をお聞かせください</h2>
+        <p class="survey-lead">
+            もし御社でご採用いただくとしたら<br>
+            何がしたいか？<br>コストはどうですか？
+        </p>
+
+        <form id="surveyForm" class="survey-form">
+            <!-- 興味のある使い方 -->
+            <div class="form-group">
+                <label class="form-label">興味のある使い方（複数選択可）</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="interests" value="ai_ceo">
+                        <span>AI社長（理念浸透）</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="interests" value="document_rag">
+                        <span>社内文書AI（マニュアル検索）</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="interests" value="customer_support">
+                        <span>カスタマー一次対応</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="interests" value="reservation">
+                        <span>予約・窓口対応</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="interests" value="mentor">
+                        <span>メンターAI（離職防止）</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="interests" value="harassment">
+                        <span>匿名意見箱（ハラスメント対策）</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="interests" value="other">
+                        <span>その他</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- 月額予算 -->
+            <div class="form-group">
+                <label class="form-label">導入可能な月額費用（1人あたり）</label>
+                <div class="radio-group">
+                    <label class="radio-item">
+                        <input type="radio" name="budget" value="free_only">
+                        <span>無料のみ</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="budget" value="under_100">
+                        <span>〜100円</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="budget" value="under_500">
+                        <span>〜500円</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="budget" value="other_plan">
+                        <span>他の料金プランが良い</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- 自由記述 -->
+            <div class="form-group">
+                <label class="form-label">他にどんな使い方をしたいですか？（任意）</label>
+                <textarea name="ideas" class="form-textarea" placeholder="例: 新入社員研修のQ&A対応、社内FAQ自動化など"></textarea>
+            </div>
+
+            <!-- 連絡先 -->
+            <div class="form-group contact-info">
+                <label class="form-label">お客様情報</label>
+                <input type="text" name="company_name" class="form-input" placeholder="会社名" required>
+                <input type="text" name="department" class="form-input" placeholder="部署名">
+                <input type="text" name="position" class="form-input" placeholder="役職">
+                <input type="text" name="name" class="form-input" placeholder="お名前" required>
+                <input type="email" name="email" class="form-input" placeholder="メールアドレス" required>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                📤 送信する
+            </button>
+        </form>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="cta-content">
+            <p class="cta-text">まずは<strong>無料</strong>でお試しいただけます</p>
+            <a href="#" class="cta-btn">🎁 無料体験を申し込む</a>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <p>&copy; 2026 <a href="https://kokotomo.becreative.co.jp/" target="_blank" rel="noopener" style="color: #888; text-decoration: underline;">ココトモ</a> - AI×LINE</p>
+    </footer>
 
     <!-- アンケート -->
     <section class="survey">
