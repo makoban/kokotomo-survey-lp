@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI×LINE で会社を変える | ココトモ</title>
+    <meta name="description" content="大手宅配便でLINEでのお客朝対応と同等。AI×LINEで社員のメンタルヘルス対策から業務効率化まで。あなたの会社ではどう使いますか？">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ヒーローセクション -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                AI × LINE で<br>
+                <span class="highlight">あなたの会社</span>を変える
+            </h1>
+            <p class="hero-subtitle">大手宅配便でLINEでのお客様対応と同等</p>
+            <div class="video-container">
+                <video controls playsinline poster="images/video-poster.jpg">
+                    <source src="video/demo.mp4" type="video/mp4">
+                    お使いのブラウザは動画をサポートしていません。
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- ココトモとは？ -->
+    <section class="about">
+        <h2 class="section-title">我々がココトモという<br>サービスを作りました！<br>なにができるの？</h2>
+        <div class="about-card">
+            <img src="images/mentor.png" alt="メンターAI" class="about-image">
+            <div class="about-text">
+                <p class="about-lead">
+                    <strong>離職防止</strong>のための<br>
+                    メンターAI × LINE
+                </p>
+                <ul class="feature-list">
+                    <li>🤝 24時間対応のAIカウンセラー</li>
+                    <li>🔒 匿名デジタル意見箱</li>
+                    <li>⚠️ ハラスメント対策</li>
+                    <li>📊 メンタルヘルス可視化</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 使い方いろいろ -->
+    <section class="usecases">
+        <h2 class="section-title">例えばこんな使い方<br>どうですか？</h2>
+
+        <div class="usecase-tabs">
+            <button class="tab-btn active" data-tab="employee">👔 社員向け</button>
+            <button class="tab-btn" data-tab="customer">🛒 お客様向け</button>
+        </div>
+
+        <div class="tab-content active" id="employee">
+            <div class="usecase-card">
+                <img src="images/ai-ceo.png" alt="AI社長" class="usecase-image">
+                <div class="usecase-info">
+                    <span class="usecase-number">01</span>
+                    <h3>AI社長</h3>
+                    <p>社長の考えや理念をAIに学習させ、全社員にいつでも浸透。質問にも24時間回答。</p>
+                </div>
+            </div>
+            <div class="usecase-card">
+                <img src="images/document-rag.png" alt="社内文書RAG" class="usecase-image">
+                <div class="usecase-info">
+                    <span class="usecase-number">02</span>
+                    <h3>社内文書AI</h3>
+                    <p>就業規則、営業マニュアルなどを読み込ませ、「これってどこに書いてある？」に即答。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="customer">
+            <div class="usecase-card">
+                <img src="images/customer-support.png" alt="カスタマー対応" class="usecase-image">
+                <div class="usecase-info">
+                    <span class="usecase-number">03</span>
+                    <h3>カスタマーAI</h3>
+                    <p>お客様からの問い合わせに一次対応。よくある質問は自動回答、難しい質問は担当者へ。</p>
+                </div>
+            </div>
+            <div class="usecase-card">
+                <img src="images/reservation.png" alt="予約・窓口対応" class="usecase-image">
+                <div class="usecase-info">
+                    <span class="usecase-number">04</span>
+                    <h3>予約・窓口AI</h3>
+                    <p>予約受付や商品説明をAIが対応。営業時間外でも受付可能に。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- アンケート -->
+    <section class="survey">
+        <h2 class="section-title">📝 ご意見をお聞かせください</h2>
+        <p class="survey-lead">
+            もし御社でご採用いただくとしたら<br>
+            何がしたいか？<br>コストはどうですか？
+        </p>
+
+        <form id="surveyForm" class="survey-form">
+            <!-- 興味のある使い方 -->
+            <div class="form-group">
+                <label class="form-label">興味のある使い方（複数選択可）</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="interests" value="ai_ceo">
+                        <span>AI社長（理念浸透）</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="interests" value="document_rag">
+                        <span>社内文書AI（マニュアル検索）</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="interests" value="customer_support">
+                        <span>カスタマー一次対応</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="interests" value="reservation">
+                        <span>予約・窓口対応</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="interests" value="mentor">
+                        <span>メンターAI（離職防止）</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="interests" value="harassment">
+                        <span>匿名意見箱（ハラスメント対策）</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="interests" value="other">
+                        <span>その他</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- 月額予算 -->
+            <div class="form-group">
+                <label class="form-label">導入可能な月額費用（1人あたり）</label>
+                <div class="radio-group">
+                    <label class="radio-item">
+                        <input type="radio" name="budget" value="free_only">
+                        <span>無料のみ</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="budget" value="under_100">
+                        <span>〜100円</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="budget" value="under_500">
+                        <span>〜500円</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="budget" value="other_plan">
+                        <span>他の料金プランが良い</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- 自由記述 -->
+            <div class="form-group">
+                <label class="form-label">他にどんな使い方をしたいですか？（任意）</label>
+                <textarea name="ideas" class="form-textarea" placeholder="例: 新入社員研修のQ&A対応、社内FAQ自動化など"></textarea>
+            </div>
+
+            <!-- 連絡先 -->
+            <div class="form-group contact-info">
+                <label class="form-label">お客様情報</label>
+                <input type="text" name="company_name" class="form-input" placeholder="会社名" required>
+                <input type="text" name="department" class="form-input" placeholder="部署名">
+                <input type="text" name="position" class="form-input" placeholder="役職">
+                <input type="text" name="name" class="form-input" placeholder="お名前" required>
+                <input type="email" name="email" class="form-input" placeholder="メールアドレス" required>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                📤 送信する
+            </button>
+        </form>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="cta-content">
+            <p class="cta-text">まずは<strong>無料</strong>でお試しいただけます</p>
+            <a href="#" class="cta-btn">🎁 無料体験を申し込む</a>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <p>&copy; 2026 ココトモ - AI×LINE</p>
+    </footer>
+
+    <!-- 送信完了モーダル -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon">✅</div>
+            <h3>ありがとうございます！</h3>
+            <p>ご回答を受け付けました。<br>後日ご連絡いたします。</p>
+            <button class="modal-close-btn" onclick="closeModal()">閉じる</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
