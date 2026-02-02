@@ -21,6 +21,19 @@ body {
     overflow-x: hidden;
 }
 
+/* ===== モバイル向けフォントサイズ調整 ===== */
+@media (max-width: 400px) {
+    /* ヒーロータイトル: 3行に収まるようフォント縮小 */
+    .hero-title-large {
+        font-size: 1.8rem !important;
+    }
+    /* セクションタイトル: 2行に収まるようフォント縮小 */
+    .section-title-boxed {
+        font-size: 1.2rem !important;
+        padding: 1rem 1.5rem !important;
+    }
+}
+
 /* ===== ヒーローセクション ===== */
 .hero {
     background: linear-gradient(135deg, #00B900 0%, #00d900 50%, #00B900 100%);
