@@ -536,7 +536,7 @@ body {
         margin: 0 auto;
     }
 
-    .about-image {
+    .about-card .about-image {
         width: 100%;
         max-width: 320px; /* PCでは画像を少し小さめに */
         margin: 0 auto;
