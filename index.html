@@ -12,15 +12,15 @@
 </head>
 <body>
     <!-- ヒーローセクション -->
+    <!-- ヒーローセクション -->
     <section class="hero">
         <div class="hero-content">
             <h1 class="hero-title">
                 AI × LINE で<br>
                 <span class="highlight">あなたの会社</span>を変える
             </h1>
-            <p class="hero-subtitle">大手宅配便でLINEでのお客様対応と同等</p>
             <div class="video-container">
-                <video controls playsinline poster="images/video-poster.jpg">
+                <video autoplay muted loop playsinline>
                     <source src="video/demo.mp4" type="video/mp4">
                     お使いのブラウザは動画をサポートしていません。
                 </video>
@@ -31,7 +31,32 @@
     <!-- ココトモとは？ -->
     <section class="about">
         <h2 class="section-title">我々がココトモという<br>サービスを作りました！<br>なにができるの？</h2>
-        <div class="about-card">
+
+        <!-- 関係図 -->
+        <div class="about-card diagram-card css-diagram-card">
+            <img src="images/diagram.png" alt="ココトモの仕組み" class="about-image">
+            <div class="about-text centered-text">
+                <p class="about-lead">
+                    社員・お客様（LINE）<br>
+                    <span>↕</span><br>
+                    <strong>AI（御社専用）</strong>
+                </p>
+            </div>
+        </div>
+
+        <!-- 配送例 -->
+        <div class="about-card example-card css-example-card">
+            <img src="images/delivery.png" alt="配送AIの例" class="about-image">
+            <div class="about-text centered-text">
+                <p class="about-lead">
+                    ヤマト運輸様でも<br>
+                    LINE（AI）で再配達<br>
+                    ありますよね！
+                </p>
+            </div>
+        </div>
+
+        <div class="about-card css-mentor-card">
             <img src="images/mentor.png" alt="メンターAI" class="about-image">
             <div class="about-text">
                 <p class="about-lead">
@@ -52,12 +77,8 @@
     <section class="usecases">
         <h2 class="section-title">例えばこんな使い方<br>どうですか？</h2>
 
-        <div class="usecase-tabs">
-            <button class="tab-btn active" data-tab="employee">👔 社員向け</button>
-            <button class="tab-btn" data-tab="customer">🛒 お客様向け</button>
-        </div>
-
-        <div class="tab-content active" id="employee">
+        <div class="usecase-group">
+            <h3 class="group-title">👔 社員向け</h3>
             <div class="usecase-card">
                 <img src="images/ai-ceo.png" alt="AI社長" class="usecase-image">
                 <div class="usecase-info">
@@ -76,7 +97,8 @@
             </div>
         </div>
 
-        <div class="tab-content" id="customer">
+        <div class="usecase-group">
+            <h3 class="group-title">🛒 お客様向け</h3>
             <div class="usecase-card">
                 <img src="images/customer-support.png" alt="カスタマー対応" class="usecase-image">
                 <div class="usecase-info">

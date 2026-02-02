@@ -1,26 +1,6 @@
-// ===== タブ切り替え =====
-document.addEventListener('DOMContentLoaded', function() {
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    tabButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const targetTab = this.dataset.tab;
-
-            // ボタンのアクティブ状態を切り替え
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-
-            // コンテンツの表示/非表示を切り替え
-            tabContents.forEach(content => {
-                if (content.id === targetTab) {
-                    content.classList.add('active');
-                } else {
-                    content.classList.remove('active');
-                }
-            });
-        });
-    });
+// ===== フォーム送信 =====
+document.addEventListener('DOMContentLoaded', () => {
+    // フォーム送信処理の初期化などがあればここに記述
 });
 
 // ===== フォーム送信 =====

@@ -113,51 +113,40 @@ body {
 }
 
 /* ===== 使い方いろいろ ===== */
+/* ===== 使い方セクション ===== */
 .usecases {
-    padding: 2.5rem 1.5rem;
-    background: #f0f4f8;
-}
-
-.usecase-tabs {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.tab-btn {
-    flex: 1;
-    padding: 0.875rem 0.5rem;
-    border: none;
+    padding: 3rem 1.5rem;
     background: #fff;
-    border-radius: 12px;
-    font-size: 0.9375rem;
-    font-weight: 600;
-    color: #666;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-.tab-btn.active {
-    background: #00B900;
-    color: #fff;
-    box-shadow: 0 4px 16px rgba(0,185,0,0.3);
+.usecase-group {
+    margin-bottom: 3rem;
 }
 
-.tab-content {
-    display: none;
+.group-title {
+    font-size: 1.4rem;
+    color: #06c755;
+    border-bottom: 2px solid #06c755;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
 }
 
-.tab-content.active {
-    display: block;
+.centered-text {
+    text-align: center;
+}
+
+.about-card.css-diagram-card, .about-card.css-example-card, .about-card.css-mentor-card {
+    margin-top: 2rem;
 }
 
 .usecase-card {
-    background: #fff;
+    background: #f8f9fa;
     border-radius: 16px;
     overflow: hidden;
-    margin-bottom: 1rem;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+    transition: transform 0.3s;
 }
 
 .usecase-image {
