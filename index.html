@@ -119,91 +119,38 @@
         </div>
     </section>
 
-    <!-- アンケート -->
     <section class="survey">
-        <h2 class="section-title">📝 ご意見をお聞かせください</h2>
+        <h2 class="section-title">📝 お問い合わせ</h2>
         <p class="survey-lead">
-            もし御社でご採用いただくとしたら<br>
-            何がしたいか？<br>コストはどうですか？
+            導入についてのご相談、<br>
+            ご質問などお気軽にご連絡ください。<br>
+            まずは無料でお試しいただけます。
         </p>
 
-        <form id="surveyForm" class="survey-form">
-            <!-- 興味のある使い方 -->
-            <div class="form-group">
-                <label class="form-label">興味のある使い方（複数選択可）</label>
-                <div class="checkbox-group">
-                    <label class="checkbox-item">
-                        <input type="checkbox" name="interests" value="ai_ceo">
-                        <span>AI社長（理念浸透）</span>
-                    </label>
-                    <label class="checkbox-item">
-                        <input type="checkbox" name="interests" value="document_rag">
-                        <span>社内文書AI（マニュアル検索）</span>
-                    </label>
-                    <label class="checkbox-item">
-                        <input type="checkbox" name="interests" value="customer_support">
-                        <span>カスタマー一次対応</span>
-                    </label>
-                    <label class="checkbox-item">
-                        <input type="checkbox" name="interests" value="reservation">
-                        <span>予約・窓口対応</span>
-                    </label>
-                    <label class="checkbox-item">
-                        <input type="checkbox" name="interests" value="mentor">
-                        <span>メンターAI（離職防止）</span>
-                    </label>
-                    <label class="checkbox-item">
-                        <input type="checkbox" name="interests" value="harassment">
-                        <span>匿名意見箱（ハラスメント対策）</span>
-                    </label>
-                    <label class="checkbox-item">
-                        <input type="checkbox" name="interests" value="other">
-                        <span>その他</span>
-                    </label>
-                </div>
+        <form id="contactForm" class="survey-form" onsubmit="event.preventDefault(); confirmAndSend();">
+            <!-- 連絡先 -->
+            <div class="form-group contact-info">
+                <label class="form-label">お客様情報</label>
+                <input type="text" id="company" class="form-input" placeholder="会社名" required>
+                <input type="text" id="name" class="form-input" placeholder="お名前" required>
+                <input type="email" id="email" class="form-input" placeholder="メールアドレス" required>
+                <input type="tel" id="tel" class="form-input" placeholder="電話番号">
             </div>
 
-            <!-- 月額予算 -->
+            <!-- 興味のある使い方 -->
             <div class="form-group">
-                <label class="form-label">導入可能な月額費用（1人あたり）</label>
-                <div class="radio-group">
-                    <label class="radio-item">
-                        <input type="radio" name="budget" value="free_only">
-                        <span>無料のみ</span>
-                    </label>
-                    <label class="radio-item">
-                        <input type="radio" name="budget" value="under_100">
-                        <span>〜100円</span>
-                    </label>
-                    <label class="radio-item">
-                        <input type="radio" name="budget" value="under_500">
-                        <span>〜500円</span>
-                    </label>
-                    <label class="radio-item">
-                        <input type="radio" name="budget" value="other_plan">
-                        <span>他の料金プランが良い</span>
-                    </label>
-                </div>
+                <label class="form-label">興味のある内容（任意）</label>
+                <textarea id="interest" class="form-textarea" placeholder="例: AI社長、社内文書AIについて詳細を知りたい" style="height: 60px;"></textarea>
             </div>
 
             <!-- 自由記述 -->
             <div class="form-group">
-                <label class="form-label">他にどんな使い方をしたいですか？（任意）</label>
-                <textarea name="ideas" class="form-textarea" placeholder="例: 新入社員研修のQ&A対応、社内FAQ自動化など"></textarea>
+                <label class="form-label">お問い合わせ内容</label>
+                <textarea id="message" class="form-textarea" placeholder="ご質問やご要望をご記入ください"></textarea>
             </div>
 
-            <!-- 連絡先 -->
-            <div class="form-group contact-info">
-                <label class="form-label">お客様情報</label>
-                <input type="text" name="company_name" class="form-input" placeholder="会社名" required>
-                <input type="text" name="department" class="form-input" placeholder="部署名">
-                <input type="text" name="position" class="form-input" placeholder="役職">
-                <input type="text" name="name" class="form-input" placeholder="お名前" required>
-                <input type="email" name="email" class="form-input" placeholder="メールアドレス" required>
-            </div>
-
-            <button type="submit" class="submit-btn">
-                📤 送信する
+            <button type="submit" class="submit-btn" id="submitBtn">
+                📤 確認して送信する
             </button>
         </form>
     </section>
