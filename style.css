@@ -566,4 +566,107 @@ body {
         margin: 0 auto;
         padding: 2rem;
     }
+/* ===== モーダルスタイル拡張 ===== */
+.confirm-content {
+    max-width: 600px;
+    width: 90%;
+    padding: 2.5rem;
+}
+
+.confirm-table {
+    margin: 1.5rem 0 2rem;
+    text-align: left;
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.confirm-row {
+    display: flex;
+    border-bottom: 1px solid #eee;
+    padding: 0.8rem 0;
+}
+
+.confirm-row:last-child {
+    border-bottom: none;
+}
+
+.confirm-label {
+    width: 120px;
+    font-weight: bold;
+    color: #555;
+    flex-shrink: 0;
+}
+
+.confirm-value {
+    flex-grow: 1;
+    word-break: break-all;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.modal-btn {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.cancel-btn {
+    background: #ddd;
+    color: #333;
+}
+
+.cancel-btn:hover {
+    background: #ccc;
+}
+
+.submit-btn-real {
+    background: #00B900;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 185, 0, 0.4);
+}
+
+.submit-btn-real:hover {
+    background: #009900;
+    transform: translateY(-2px);
+}
+
+/* ===== ヒーローデザイン装飾 ===== */
+.hero-title-framed {
+    display: inline-block;
+    border: 4px solid #fff;
+    padding: 1.5rem 3rem;
+    background: rgba(0,0,0,0.1); /* 少し暗くして文字を際立たせる */
+    border-radius: 12px;
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.3); /* 二重枠風 */
+    margin-bottom: 3rem; /* 動画との間隔を広げる */
+}
+
+.hero-title-framed .highlight {
+    background: transparent; /* 枠があるのでハイライト背景は消すか調整 */
+    color: #ffd700; /* 黄色文字で強調 */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+/* 動画との間隔 */
+.mt-large {
+    margin-top: 4rem !important; /* 強制的に空ける */
+}
+
+/* PC画像サイズ制限 */
+@media (min-width: 768px) {
+    .about-card .about-image {
+        width: 100% !important;
+        max-width: 380px !important; /* 少し余裕を持たせる */
+        margin: 0 auto !important;
+        display: block !important;
+    }
 }

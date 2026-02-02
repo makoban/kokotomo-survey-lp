@@ -15,7 +15,7 @@
     <!-- ヒーローセクション -->
     <section class="hero">
         <div class="hero-content">
-            <h1 class="hero-title hero-title-large">
+            <h1 class="hero-title hero-title-large hero-title-framed">
                 AI × LINE で<br>
                 <span class="highlight">あなたの会社</span>を変える
             </h1>
@@ -137,11 +137,7 @@
                 <input type="tel" id="tel" class="form-input" placeholder="電話番号">
             </div>
 
-            <!-- 興味のある使い方 -->
-            <div class="form-group">
-                <label class="form-label">興味のある内容（任意）</label>
-                <textarea id="interest" class="form-textarea" placeholder="例: AI社長、社内文書AIについて詳細を知りたい" style="height: 60px;"></textarea>
-            </div>
+
 
             <!-- 自由記述 -->
             <div class="form-group">
@@ -165,10 +161,44 @@
 
     <!-- フッター -->
     <footer class="footer">
-        <p>&copy; 2026 <a href="https://kokotomo.becreative.co.jp/" target="_blank" rel="noopener" style="color: #888; text-decoration: underline;">ココトモ</a> - AI×LINE</p>
+        <p>&copy; 2026 ココトモ - AI×LINE</p>
+        <p class="provider" style="font-size: 0.8rem; margin-top: 0.5rem;">提供元 <a href="https://bantex.co.jp/" target="_blank" style="color: inherit; text-decoration: underline;">株式会社バンテックス</a></p>
     </footer>
 
 
+
+    <!-- 確認用モーダル -->
+    <div id="confirmModal" class="modal">
+        <div class="modal-content confirm-content">
+            <h3>以下の内容で送信します。<br>よろしいですか？</h3>
+            <div class="confirm-table">
+                <div class="confirm-row">
+                    <span class="confirm-label">会社名</span>
+                    <span class="confirm-value" id="conf-company"></span>
+                </div>
+                <div class="confirm-row">
+                    <span class="confirm-label">お名前</span>
+                    <span class="confirm-value" id="conf-name"></span>
+                </div>
+                <div class="confirm-row">
+                    <span class="confirm-label">メール</span>
+                    <span class="confirm-value" id="conf-email"></span>
+                </div>
+                <div class="confirm-row">
+                    <span class="confirm-label">電話番号</span>
+                    <span class="confirm-value" id="conf-tel"></span>
+                </div>
+                <div class="confirm-row">
+                    <span class="confirm-label">お問い合わせ</span>
+                    <span class="confirm-value" id="conf-message"></span>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="modal-btn cancel-btn" onclick="closeConfirmModal()">修正する</button>
+                <button class="modal-btn submit-btn-real" onclick="executeSend()">送信する</button>
+            </div>
+        </div>
+    </div>
 
     <!-- 送信完了モーダル -->
     <div id="successModal" class="modal">
@@ -176,7 +206,7 @@
             <div class="modal-icon">✅</div>
             <h3>ありがとうございます！</h3>
             <p>ご回答を受け付けました。<br>後日ご連絡いたします。</p>
-            <button class="modal-close-btn" onclick="closeModal()">閉じる</button>
+            <button class="modal-close-btn" onclick="closeSuccessModal()">閉じる</button>
         </div>
     </div>
 

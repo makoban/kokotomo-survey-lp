@@ -1,52 +1,79 @@
-// ===== フォーム送信処理 (Web3Forms) =====
+let formDataTemp = {}; // 送信データを一時保存
+
+// ===== 確認モーダル表示処理 =====
 function confirmAndSend() {
     // 1. 入力値の取得
     const company = document.getElementById('company').value || '';
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const tel = document.getElementById('tel').value || '';
-    const interest = document.getElementById('interest').value || '';
     const message = document.getElementById('message').value || '';
 
-    // 2. 送信前確認
-    const confirmMsg = `以下の内容で送信します。よろしいですか？\n\n【会社名】${company}\n【お名前】${name}\n【メール】${email}\n【電話番号】${tel}\n【興味のある内容】${interest}\n【お問い合わせ】${message}`;
-
-    if (!confirm(confirmMsg)) {
-        return; // キャンセルなら送信しない
+    // 必須チェック（HTMLのrequired属性でカバーされるが念のため）
+    if (!company || !name || !email) {
+        alert('必須項目（会社名、お名前、メール）を入力してください。');
+        return;
     }
 
-    const submitBtn = document.getElementById('submitBtn');
-    submitBtn.textContent = '送信中...';
-    submitBtn.disabled = true;
-
-    // 3. Web3Formsの設定
-    const accessKey = '18e5fc30-492e-4cbc-994f-50baddd58d4c';
-
-    // 4. 送信データを作成
-    const formData = {
-        access_key: accessKey,
-        subject: '【ココトモLP】お問い合わせ・無料体験申し込み',
-        from_name: 'Kokotomo LP',
+    // 2. 一時保存
+    formDataTemp = {
         company: company,
         name: name,
         email: email,
         tel: tel,
-        interest: interest,
         message: message
     };
 
-    // 5. 送信実行
+    // 3. モーダルに値をセット
+    document.getElementById('conf-company').textContent = company;
+    document.getElementById('conf-name').textContent = name;
+    document.getElementById('conf-email').textContent = email;
+    document.getElementById('conf-tel').textContent = tel;
+    document.getElementById('conf-message').textContent = message;
+
+    // 4. 確認モーダル表示
+    document.getElementById('confirmModal').style.display = 'flex';
+}
+
+// ===== モーダル操作 =====
+function closeConfirmModal() {
+    document.getElementById('confirmModal').style.display = 'none';
+}
+
+function closeSuccessModal() {
+    document.getElementById('successModal').style.display = 'none';
+}
+
+// ===== 実際の送信処理 =====
+function executeSend() {
+    const submitBtn = document.querySelector('.submit-btn-real');
+    submitBtn.textContent = '送信中...';
+    submitBtn.disabled = true;
+
+    // Web3Formsの設定
+    const accessKey = '18e5fc30-492e-4cbc-994f-50baddd58d4c';
+
+    // 送信データを作成
+    const sendData = {
+        access_key: accessKey,
+        subject: '【ココトモLP】お問い合わせ・無料体験申し込み',
+        from_name: 'Kokotomo LP',
+        ...formDataTemp
+    };
+
+    // 送信実行
     fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(sendData)
     })
     .then(response => response.json())
     .then(result => {
         if (result.success) {
             // 送信成功
+            closeConfirmModal();
             document.getElementById('successModal').style.display = 'flex';
             document.getElementById('contactForm').reset();
         } else {
@@ -59,14 +86,9 @@ function confirmAndSend() {
         alert('通信エラーが発生しました。ネットワーク環境をご確認ください。');
     })
     .finally(() => {
-        submitBtn.textContent = '📤 確認して送信する';
+        submitBtn.textContent = '送信する';
         submitBtn.disabled = false;
     });
-}
-
-// モーダルを閉じる関数
-function closeModal() {
-    document.getElementById('successModal').style.display = 'none';
 }
 
 // ===== フォーム送信 =====
