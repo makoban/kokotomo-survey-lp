@@ -625,6 +625,41 @@ body {
     overflow-y: auto;
 }
 
+/* スマホでモーダルを1画面に収める */
+@media (max-width: 500px) {
+    .confirm-content {
+        padding: 1rem;
+        max-height: 95vh;
+    }
+    .confirm-content h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    .confirm-table {
+        margin: 0.5rem 0;
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+    .confirm-row {
+        padding: 0.4rem 0;
+    }
+    .confirm-label {
+        width: 80px;
+        font-size: 0.75rem;
+    }
+    .confirm-value {
+        font-size: 0.8rem;
+    }
+    .modal-buttons {
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+    }
+    .modal-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
+}
+
 .confirm-table {
     margin: 1.5rem 0 2rem;
     text-align: left;
