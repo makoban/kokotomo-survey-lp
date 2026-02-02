@@ -621,6 +621,8 @@ body {
     max-width: 600px;
     width: 90%;
     padding: 2.5rem;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 .confirm-table {
